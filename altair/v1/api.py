@@ -195,13 +195,16 @@ class TopLevelMixin(object):
         Note that png/svg output requires several nodejs packages to be
         installed and correctly configured. Before running this, you must
         have nodejs and cairo on your system and use the node package manager
-        to install the ``canvas`` and ``vega-lite`` packages.
+        to install the ``canvas``, ``vega`` and ``vega-lite`` packages. Note below
+        that versions are specified, as ``vega-lite`` needs to be matched with
+        with the version used by ``altair``, and ``vega`` needs to be matched to
+        ``vega-lite``.
 
         If you are using anaconda, you can set it up this way:
 
             $ conda create -n node-env -c conda-forge python=2.7 cairo nodejs altair
             $ source activate node-env
-            $ npm install canvas vega-lite
+            $ npm install canvas vega-lite@1.2.1 vega@2.6.0
 
         The node binaries used here (``vl2vg``, ``vl2png``, ``vl2svg``) will be
         installed in the node root directory, which should be automatically
